@@ -40,12 +40,13 @@ class Transaction {
 
   class SavingsAccount extends BankAccout {
 
-      constructor(accountNumber, owner,interestRate)
+      constructor(accountNumber, owner,interestRate){
           super(accountNumber, owner);
           this.interestRate = interestRate;
       }
+  }
 
-  accrueInterest(){
+  const accrueInterest = () => {
     let currentBalance = this.balance();
     let interestAmt = currentBalance * this.interestRate;
     let interestTransaction = new Transaction(interestAmt, "Interest");
